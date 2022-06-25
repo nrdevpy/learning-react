@@ -28,7 +28,7 @@ const expenses = [
   },
 ];
 
-function App() {
+const App = () => {
   return (
     <Expenses items={expenses}/>
   );
