@@ -1,3 +1,6 @@
+import React from 'react';
+
+import NewExpense from './components/NewExpense/NewExpense';
 import Expenses from './components/Expenses/Expenses';
 
 // This could be an API
@@ -28,9 +31,13 @@ const expenses = [
   },
 ];
 
+// App
 const App = () => {
   return (
-    <Expenses items={expenses}/>
+    <div>
+      <NewExpense />
+      <Expenses items={expenses}/>
+    </div>
   );
 }
 
