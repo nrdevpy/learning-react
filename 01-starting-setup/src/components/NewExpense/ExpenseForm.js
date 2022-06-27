@@ -7,11 +7,12 @@ const ExpenseForm = () => {
     const [enteredAmount, setEnteredAmount] = useState('');
     const [enteredDate, setEnteredDate] = useState('');
 
-    const [userInput, setUserInput] = useState({
+    /* const [userInput, setUserInput] = useState({
         enteredTitle: '',
         enteredAmount: '',
         enteredDate: '',
-    });
+    }); */
+
 
     const titleChangeHandler = event => {
         // * 1º Way
@@ -44,7 +45,18 @@ const ExpenseForm = () => {
         }); */
     };
 
-    return <form>
+    const submitHandler = event => {
+        event.preventDefault();
+
+        const expenseData = {
+            title: enteredTitle,
+            amount: enteredAmount,
+            date: new Date(enteredDate),
+        }
+        console.log(expenseData);
+    };
+    
+    return <form onSubmit={submitHandler}>
         <div className='new-expense__controls'>
             <div className='new-expense__control'>
                 <label>Title</label>
