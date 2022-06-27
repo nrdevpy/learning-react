@@ -3,36 +3,45 @@ import ExpenseItem from '../Expenses/ExpenseItem';
 import './ExpenseForm.css';
 
 const ExpenseForm = () => {
-    // const [enteredTitle, setEnteredTitle] = useState('');
-    // const [enteredAmount, setEnteredAmount] = useState('');
-    // const [enteredDate, setEnteredDate] = useState('');
+    const [enteredTitle, setEnteredTitle] = useState('');
+    const [enteredAmount, setEnteredAmount] = useState('');
+    const [enteredDate, setEnteredDate] = useState('');
 
-    const [userInput, setUserInput] = useState ({
-       enteredTitle: '', 
-       enteredAmount: '', 
-       enteredDate: '', 
+    const [userInput, setUserInput] = useState({
+        enteredTitle: '',
+        enteredAmount: '',
+        enteredDate: '',
     });
 
     const titleChangeHandler = event => {
-        // setEnteredTitle(event.target.value);
-        setUserInput ({
+        // * 1º Way
+        setEnteredTitle(event.target.value);
+        // * 2º Way
+        /* setUserInput ({
             ...userInput,
             enteredTitle: event.target.value,
-        });
+        }); */
+        // * 3º Way (To keep save previous variable)
+        /* setUserInput(prevState => {
+            return ({
+                ...prevState,
+                enteredTitle: event.target.value
+            });
+        }); */
     };
     const amountChangeHandler = event => {
-        // setEnteredAmount(event.target.value);
-        setUserInput ({
+        setEnteredAmount(event.target.value);
+        /* setUserInput ({
             ...userInput,
             enteredAmount: event.target.value,
-        });
+        }); */
     };
     const dateChangeHandler = event => {
-        // setEnteredDate(event.target.value);
-        setUserInput ({
+        setEnteredDate(event.target.value);
+        /* setUserInput ({
             ...userInput,
             enteredDate: event.target.value,
-        });
+        }); */
     };
 
     return <form>
