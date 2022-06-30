@@ -6,7 +6,7 @@ import './NewExpense.css';
 // NewExpense component
 const NewExpense = props => {
     //* Functions
-    // Create expense object from ExpenseForm's data.
+    // Create expense object from ExpenseForm's datas.
     const saveExpenseDataHandler = enteredExpenseData => {
         const expenseData = {
             id: Math.random().toString(),

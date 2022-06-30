@@ -22,5 +22,9 @@
   }
   
   .new-expense__actions {
-    text-align: right;
+    text-align: center;
+  }
+  .new-expense__actions--flex{
+    display: flex;
+    justify-content: end;
   }

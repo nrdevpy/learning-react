@@ -7,6 +7,7 @@ const ExpenseForm = props => {
     const [enteredTitle, setEnteredTitle] = useState('');
     const [enteredAmount, setEnteredAmount] = useState('');
     const [enteredDate, setEnteredDate] = useState('');
+    const [isTab, setIsTab] = useState(false);
     // Another way to add multiple useStates
     /* const [userInput, setUserInput] = useState({
         enteredTitle: '',
@@ -60,7 +61,22 @@ const ExpenseForm = props => {
         setEnteredAmount('');
         setEnteredDate('');
     };
+    //TODO: Create a button to expand form tab.
+    const onActivateForm = () => {
+        setIsTab(true);
+    };
+    const onCancelForm = () => {
+        setIsTab(false);
+    };
+
     //* Return
+    if (!isTab) {
+        return (
+            <div className='new-expense__actions'>
+                <button type='button' onClick={onActivateForm}>Add New Expense</button>
+            </div>
+        );
+    };
     return (
         <form onSubmit={submitHandler}>
             <div className='new-expense__controls'>
@@ -93,8 +109,13 @@ const ExpenseForm = props => {
                     />
                 </div>
             </div>
-            <div className='new-expense__actions'>
-                <button type='submit'>Add Expense</button>
+            <div className="new-expense__actions--flex">
+                <div className='new-expense__actions'>
+                    <button type='button' onClick={onCancelForm}>Cancel</button>
+                </div>
+                <div className='new-expense__actions'>
+                    <button type='submit'>Add Expense</button>
+                </div>
             </div>
         </form>
     );
