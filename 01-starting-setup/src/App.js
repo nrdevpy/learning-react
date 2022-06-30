@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import NewExpense from './components/NewExpense/NewExpense';
 import Expenses from './components/Expenses/Expenses';
 
+
 // This could be an API
 const DUMMY_EXPENSES = [
   {
