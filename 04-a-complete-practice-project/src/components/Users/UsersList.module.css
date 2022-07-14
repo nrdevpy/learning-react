@@ -1,16 +1,27 @@
 .users {
-    margin: 2rem auto;
-    width: 90%;
-    max-width: 40rem;
+  position: relative;
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 40rem;
+  animation: left-slide .8s ease-in-out;
+}
+@keyframes left-slide{
+  from {
+    left: -100%;
+    opacity: 0;
   }
-  
-  .users ul {
-    list-style: none;
-    padding: 1rem;
+  to {
+    left: 0%;
+    opacity: 1;
   }
-  
-  .users li {
-    border: 1px solid #ccc;
-    margin: 0.5rem 0;
-    padding: 0.5rem;
-  }
+}
+.users ul {
+  list-style: none;
+  padding: 1rem;
+}
+
+.users li {
+  border: 1px solid #ccc;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+}
